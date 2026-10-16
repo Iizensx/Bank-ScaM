@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank ScaM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+
+    <header class="top">
+      <div>
+        <h1>Bank ScaM</h1>
+        <p class="sub">ฝาก ถอน เช็คยอด ผ่าน Smart Contract โดยบิด100%</p>
+      </div>
+      <span class="badge">Sepolia</span>
+    </header>
+
+    <!-- แก้ตรงนี้: รหัสนักศึกษา และ ชื่อ-สกุล -->
+    <section class="student">
+      <div>
+        <span class="label">รหัสนักศึกษา</span>
+        <b>6602280</b>
+      </div>
+      <div>
+        <span class="label">ชื่อ-สกุล</span>
+        <b>ธนาภัทร แก้วเรือง</b>
+      </div>
+    </section>
+
+    <section class="wallet">
+      <button id="btnConnect" class="btn dark full">เชื่อมต่อ MetaMask</button>
+      <dl class="info">
+        <div><dt>บัญชี</dt><dd id="account">-</dd></div>
+        <div><dt>เครือข่าย</dt><dd id="network">-</dd></div>
+        <div><dt>Smart Contract</dt><dd><a id="contractLink" href="#" target="_blank" rel="noopener">-</a></dd></div>
+      </dl>
+    </section>
+
+    <section class="balance-box">
+      <span class="label">ยอดเงินของคุณในธนาคาร</span>
+      <div class="balance"><b id="balance">-</b><small>ETH</small></div>
+      <button id="btnCheck" class="btn link">รีเฟรชยอดเงิน (Check Balance)</button>
+    </section>
+
+    <section class="action">
+      <label class="label" for="amount">จำนวน ETH</label>
+      <input id="amount" type="number" step="0.0001" min="0" placeholder="0.001">
+      <div class="btn-row">
+        <button id="btnDeposit" class="btn green">Deposit</button>
+        <button id="btnWithdraw" class="btn outline">Withdraw</button>
+      </div>
+    </section>
+
+    <div id="status" class="status">สถานะ: ยังไม่เชื่อมต่อ</div>
+
+    <section id="historyBox" class="history hidden">
+      <span class="label">รายการล่าสุด</span>
+      <ul id="history"></ul>
+    </section>
+
+    <footer class="foot">Sepolia Testnet · ไม่ใช่เงินจริง</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
